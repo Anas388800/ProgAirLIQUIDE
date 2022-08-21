@@ -55,3 +55,15 @@ uint32_t  Sinewave[n_sample] = {
 0x0064,0x007c,0x0097,0x00b4,0x00d3,0x00f4,0x0118,0x013f,0x0167,0x0192,0x01bf,0x01ee,0x021e,0x0251,0x0286,0x02bc,0x02f5,0x032e,0x036a,0x03a7,
 0x03e5,0x0425,0x0466,0x04a8,0x04ec,0x0530,0x0575,0x05bb,0x0602,0x064a,0x0692,0x06da,0x0723,0x076d,0x07b6,0x0800
 };
+
+void setup(){
+  Wire.begin();                                                 // Inializise i2c peripheral
+  Serial.begin(250000);                                         // Inializise Serial peripheral
+  sampling_period_us = round(1000000*(1.0/SAMPLING_FREQUENCY)); // period between two samples 100us
+  dac_setup();                                                  // Configuration of the Dac
+  number_of_ticks = freqToTc(frequency);                        // convert frequence value to value of counter 
+  Init_timer();                                                 // Configuration of the timer 
+
+  setup_pio_TIOA0();                     // Configuration of External trigger synchronized on the counter overflow
+                                         // to provides a 50-50 PWM signal
+}
