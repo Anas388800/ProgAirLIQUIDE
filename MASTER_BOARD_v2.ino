@@ -10,6 +10,7 @@
 
 uint16_t force[BUF_SIZE];
 uint16_t master[BUF_SIZE];
+Aller l'om
 uint16_t slave[BUF_SIZE];
 uint16_t buf_v_m_s[BUF_SIZE_MERGED];
 
@@ -68,4 +69,10 @@ void setup(){
                                          // to provides a 50-50 PWM signal
 }
 
+void setup_pio_TIOA0()  // configuration of external signal to create a PWM 
+{
+  PIOB->PIO_PDR   = PIO_PB25B_TIOA0; // disable PIO control
+  PIOB->PIO_IDR   = PIO_PB25B_TIOA0; // disable PIO interrupts
+  PIOB->PIO_ABSR |= PIO_PB25B_TIOA0; // switch to B peripheral consider as I/O
+}
 
