@@ -67,3 +67,5 @@ void setup(){
   setup_pio_TIOA0();                     // Configuration of External trigger synchronized on the counter overflow
                                          // to provides a 50-50 PWM signal
 }
+
+
