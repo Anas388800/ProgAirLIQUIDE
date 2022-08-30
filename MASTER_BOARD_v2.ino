@@ -67,3 +67,10 @@ void setup(){
   setup_pio_TIOA0();                     // Configuration of External trigger synchronized on the counter overflow
                                          // to provides a 50-50 PWM signal
 }
+
+void setup_pio_TIOA0()  // configuration of external signal to create a PWM 
+{
+  PIOB->PIO_PDR   = PIO_PB25B_TIOA0; // disable PIO control
+  PIOB->PIO_IDR   = PIO_PB25B_TIOA0; // disable PIO interrupts
+  PIOB->PIO_ABSR |= PIO_PB25B_TIOA0; // switch to B peripheral consider as I/O
+}
