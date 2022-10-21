@@ -76,3 +76,13 @@ void setup_pio_TIOA0()  // configuration of external signal to create a PWM
   PIOB->PIO_ABSR |= PIO_PB25B_TIOA0; // switch to B peripheral consider as I/O
 }
 
+void loop(){
+
+  while (Serial.available()) {
+    /*
+     * La carte recois une commande de l'interface homme-machine 
+     */
+    delay(2);  //delay to allow byte to arrive in input buffer
+    char c = Serial.read();
+    mot += c;
+  }
