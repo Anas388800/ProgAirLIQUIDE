@@ -76,3 +76,27 @@ void setup_pio_TIOA0()  // configuration of external signal to create a PWM
   PIOB->PIO_ABSR |= PIO_PB25B_TIOA0; // switch to B peripheral consider as I/O
 }
 
+
+void loop(){
+
+  while (Serial.available()) {
+    /*
+     * La carte recois une commande de l'interface homme-machine 
+     */
+    delay(2);  //delay to allow byte to arrive in input buffer
+    char c = Serial.read();
+    mot += c;
+  }
+
+  if (mot.length() >0) {
+    /*
+     * Code recu :
+     * ----------
+     * 
+     *  Code 0 : Desactive l'Algorithme de vibration
+     *  Code 1 : Active l'Algorithme de vibration
+     *  Code 2 : Changement d'amplitude du Master
+     *  Code 3 : Changement de frequence du Master
+     *  Code 4 : Recuperation de Vibration/ Master / Slave
+     *  Code 5 : Modifie gain de l'Algorithme
+     */
