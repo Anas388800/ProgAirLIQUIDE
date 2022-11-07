@@ -200,8 +200,7 @@ void TC7_Handler(){
   else if (start == 0 ){                                              // When Supply is OFF
     DACC_INTERFACE->DACC_CDR = 0;                                     // output 0V
   }
-  
-  
+   
 }
 
 /*void dac_setup(){

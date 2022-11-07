@@ -1,5 +1,5 @@
  /*
- * Autor : SALAMANI Anas 
+ * Autor : SALAMANI Anas + tarek
  * Last Version : 09/07/2021
  */
 #include <Wire.h>
