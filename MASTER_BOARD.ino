@@ -1,5 +1,5 @@
 /*
- * Autor : SALAMANI Anas + Tarek Madani
+ * Autor : SALAMANI Anas
  * Last Version : 09/07/2021
  */
 
