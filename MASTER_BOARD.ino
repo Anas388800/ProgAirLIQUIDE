@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
  * Autor : SALAMANI Anas + HouHou
+=======
+ * Autor : SALAMANI Anas + Tarek Madani
+>>>>>>> 392b154010b59005de428430e1f1bd0ef1d20b71
  * Last Version : 09/07/2021
  */
 
